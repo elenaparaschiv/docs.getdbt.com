@@ -1,5 +1,5 @@
 ---
-title: The columns of my seed changed, and now I can't rerun `seed`, what do I do?
+title: The columns of my seed changed, and now I get an error when running `seed`, what do I do?
 ---
 If you changed the columns of your seed, you'll need to rerun the command with a `--full-refresh` flag, like so:
 ```
