@@ -13,6 +13,16 @@ data-paths: ["data"]
 </File>
 
 ## Examples
+### Use a subdirectory named `seeds` instead of `data`
+
+<File name='dbt_project.yml'>
+
+```yml
+data-paths: ["seeds"]
+```
+
+</File>
+
 ### Co-locate your models and seeds in the `models` directory
 
 <File name='dbt_project.yml'>
@@ -20,6 +30,15 @@ data-paths: ["data"]
 ```yml
 data-paths: ["models"]
 model-paths: ["models"]
+```
+
+</File>
+
+### Split your seeds across two directories
+<File name='dbt_project.yml'>
+
+```yml
+data-paths: ["data", "seeds"]
 ```
 
 </File>

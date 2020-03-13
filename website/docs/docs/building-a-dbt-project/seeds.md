@@ -75,8 +75,9 @@ select * from {{ ref('country_codes') }}
 * The `dbt seed` function [put a link here]
 
 ### FAQs:
-<FAQ src="faqs/load-raw-data-with-seed" />
-* Can I use seeds to load my raw data? **NO!**
+<FAQ src="load-raw-data-with-seed" />
+<FAQ src="configurable-data-path" />
+
 * Can I place my seeds in a different directory? Yes just update the `data-paths` value in your `dbt_project.yml` file
 * Can I use a format other than CSV (e.g. TSV)? No
 * How do I escape comma characters?
