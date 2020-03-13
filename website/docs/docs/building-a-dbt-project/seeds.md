@@ -77,11 +77,15 @@ select * from {{ ref('country_codes') }}
 ### FAQs:
 <FAQ src="load-raw-data-with-seed" />
 <FAQ src="configurable-data-path" />
+<FAQ src="full-refresh-seed" />
+<FAQ src="testing-seeds" />
+
+* The columns of my seed changed, and now I can't rerun `seed`, what do I do? Use `--full-refresh`
+
 
 * Can I use a format other than CSV (e.g. TSV)? No
 
 * How do I escape comma characters?
-* The columns of my seed changed, and now I can't rerun `seed`, what do I do? Use `--full-refresh`
 * Can I name my table a different name to the CSV file? Umm I think aliases apply, but, like, why would you tho?
 * Can I test seeds? (Yes, cheekily)
 * Can I document seeds? (I think so)
