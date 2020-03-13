@@ -27,6 +27,11 @@ module.exports = {
           position: 'left',
         },
         {
+          to: '/reference/dbt-project-yml',
+          label: 'Reference',
+          position: 'left',
+        },
+        {
           to: '/tutorial/setting-up',
           label: 'Tutorial',
           position: 'left',
