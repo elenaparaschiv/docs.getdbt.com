@@ -71,10 +71,10 @@ select * from {{ ref('country_codes') }}
 </File>
 
 ## Related documentation
-* Configuring seeds in [dbt_project.yml](referece/dbt_project.yml.md)
-* The `dbt seed` function [put a link here]
+* Configuring seeds in [dbt_project.yml](reference/dbt_project.yml.md)
+* The `dbt seed` [command](running-a-dbt-project/command-line-interface/seed.md)
 
-### FAQs:
+## FAQs:
 <FAQ src="load-raw-data-with-seed" />
 <FAQ src="configurable-data-path" />
 <FAQ src="full-refresh-seed" />
