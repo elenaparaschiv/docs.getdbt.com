@@ -4,12 +4,12 @@ title: Seed configurations
 
 ## Available configurations
 
-* [quote_columns](quote-columns.md)
-* [enabled](enabled.md)
-* [schema](schema.md)
-* [pre-hook](pre-hook.md)
-* [post-hook](post-hook.md)
-* [column_types](column_types.md)
+* [quote_columns](quote-columns.md): true | false
+* [enabled](enabled.md): true | false
+* [schema](schema.md): string
+* [pre-hook](pre-hook.md): sql-statement
+* [post-hook](post-hook.md): sql-statement
+* [column_types](column_types.md): {column_name: datatype}
 
 ## Configuring seeds
 Seeds can only be configured from the `dbt_project.yml` file.
