@@ -11,7 +11,8 @@ Check out [our lesson](tutorial/add-a-seed.md) on adding a seed file to your pro
 Seeds are CSV files in your dbt project (typically in your `data` directory),
 that dbt can load into your data warehouse using the `dbt seed` command.
 
-Seeds can be referenced in downstream models the same way as referencing  using the `ref` function.
+Seeds can be referenced in downstream models the same way as referencing models
+— by using the `ref` [unction.
 
 Because these CSV files are located in your dbt repository, they are version
 controlled and code reviewable. Seeds are best suited to static data which
@@ -41,7 +42,7 @@ GB,United Kingdom
 
 </File>
 
-2. Run the [dbt seed](link-to-nowhere) command — a new table will be created in your warehouse in your target schema, named `country_codes`
+2. Run the `dbt seed` [command](running-a-dbt-project/command-line-interface/seed.md) — a new table will be created in your warehouse in your target schema, named `country_codes`
 ```
 $ dbt seed
 
