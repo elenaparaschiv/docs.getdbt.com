@@ -158,6 +158,49 @@ password: hunter2
             </div>
 
             <div className='section' style={{marginTop: '40px'}}>
+            <h1>Tabs</h1>
+<pre>{`
+<Tabs
+  defaultValue="default"
+  values={[
+    { label: 'Default', value: 'default', },
+    { label: 'Snowflake', value: 'snowflake', },
+  ]
+}>
+<TabItem value="default">
+
+\`\`\`sql
+select id from customers
+\`\`\`
+</TabItem>
+<TabItem value="snowflake">
+\`\`\`sql
+select "ID" from customers
+\`\`\`
+</TabItem>
+</Tabs>
+`}</pre>
+<Tabs
+  defaultValue="default"
+  values={[
+    { label: 'Default', value: 'default', },
+    { label: 'Snowflake', value: 'snowflake', },
+  ]
+}>
+<TabItem value="default">
+
+```sql
+select id from customers
+```
+</TabItem>
+<TabItem value="snowflake">
+```sql
+select "ID" from customers
+```
+</TabItem>
+</Tabs>
+</div>
+        <div className='section' style={{marginTop: '40px'}}>
                 <h1>YoutubeVideo</h1>
                 <pre>{`<YoutubeVideo id="5yyGT1k2xzY" />`}</pre>
                 <YoutubeVideo id="5yyGT1k2xzY" />
