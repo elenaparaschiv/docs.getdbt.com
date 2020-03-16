@@ -72,7 +72,7 @@ select * from {{ ref('country_codes') }}
 </File>
 
 ## Related documentation
-* Configuring seeds in [dbt_project.yml](reference/dbt_project.yml.md)
+* [Seed configurations](reference/seed-configs.md)
 * The `dbt seed` [command](running-a-dbt-project/command-line-interface/seed.md)
 
 ## FAQs:
@@ -80,12 +80,8 @@ select * from {{ ref('country_codes') }}
 <FAQ src="configurable-data-path" />
 <FAQ src="full-refresh-seed" />
 <FAQ src="testing-seeds" />
-
-
-* Can I use a format other than CSV (e.g. TSV)? No
-* How do I escape comma characters?
-* Can I name my table a different name to the CSV file? Umm I think aliases apply, but, like, why would you tho?
-* Can I run models downstream of a seed? Yes, use the model selection syntax
-* My seed was loaded with the wrong datatype. Can I force a datatype?
-* Do hooks run when running seeds?
-* Can I load one seed a time? Yes in v0.16.0
+<FAQ src="seed-datatypes" />
+<FAQ src="run-downstream-of-seed" />
+<FAQ src="leading-zeros-in-seed" />
+<FAQ src="build-one-seed" />
+<FAQ src="seed-hooks" />

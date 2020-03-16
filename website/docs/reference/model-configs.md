@@ -1,3 +1,7 @@
+---
+title: Model configurations
+---
+
 <Alert type='danger'>
 
 These docs are a placeholder for a yet-to-be-written reference section.

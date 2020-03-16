@@ -3,20 +3,34 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Definition
-An optional seed configuration, used to determine whether column names in the seed file should be quoted.
+An optional seed configuration, used to determine whether column names in the seed file should be quoted when the table is created.
 
-* When `true`, dbt will quote the column names defined in the seed file when building a table for the seed, preserving casing.
-* (Default) When `false`, dbt will not quote the column names defined in the seed file.
+* When `True`, dbt will quote the column names defined in the seed file when building a table for the seed, preserving casing.
+* (Default) When `False`, dbt will not quote the column names defined in the seed file.
 
 ## Usage
+### Globally quote all seed columns
+
 <File name='dbt_project.yml'>
 
 ```yml
-seed:
+seeds:
   quote_columns: true | false
 ```
 
 </File>
+
+### Only quote seeds in the `data/mappings` directory.
+For a project with:
+* `name: jaffle_shop` in the `dbt_project.yml` file
+* `data-paths: ["data"]` in the `dbt_project.yml` file
+
+```yml
+seeds:
+  jaffle_shop:
+    mappings:
+      quote_columns: true
+```
 
 
 ## Changelog
@@ -24,71 +38,7 @@ seed:
 * Future: The default value may change in a future release. If you're using seed files, it is recommended that you set this configuration explicitly to avoid breaking changes in the future.
 
 ## Recommended configuration
-* Redshift:
-* Snowflake: set `quote_columns: false`
-
-## Examples
-
-Consider a CSV as follows:
-
-<File name='country_codes.csv'>
-
-```text
-country_code,Country_Name
-US,United States
-CA,Canada
-GB,United Kingdom
-...
-```
-
-</File>
-
-
-Due to the different nature of quoting on each database, the way you select from this seed will differ.
-
-
-<Tabs
-  defaultValue="default"
-  values={[
-    { label: 'Default', value: 'default', },
-    { label: 'Snowflake', value: 'sf', },
-  ]
-}>
-<TabItem value="default">
-
-When `quote_columns: false`:
-
-```sql
--- ✅ This will work
-select country_code, country_name from {{ ref('country_codes') }};
-select COUNTRY_CODE from {{ ref('country_codes') }};
-select "country_code", "Country_Name" from {{ ref('country_codes') }};
-
-
---❌ This will not work
-select "COUNTRY_CODE" from {{ ref('country_codes') }}
-
-```
-
-When `quote_columns: true`:
-
-
-</TabItem>
-<TabItem value="sf">
-
-When `quote_columns: false`:
-
-```sql
--- ✅ This will work
-select country_code from {{ ref('country_codes') }};
-select COUNTRY_CODE from {{ ref('country_codes') }};
-select "country_code" from {{ ref('country_codes') }};
-
-
---❌This will not work
-select "COUNTRY_CODE" from {{ reg('country_codes') }}
-
-```
-
-</TabItem>
-</Tabs>
+* Explicitly set this value if using seed files.
+* Apply the configuration globally rather than to individual projects/seeds.
+* Set `quote_columns: false` _unless_ your column names include a special character or casing needs to be preserved. In that case, consider renaming your seed columns (this will simplify code downstream)
+[to-do: check this recommendation]

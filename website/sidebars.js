@@ -234,7 +234,10 @@ module.exports = {
   },
   reference: {
     "Configurations": [
-      "reference/dbt-project-yml"
+      "reference/dbt_project.yml",
+      "reference/model-configs",
+      "reference/seed-configs",
+      "reference/snapshot-configs"
     ]
   },
   tutorial: {

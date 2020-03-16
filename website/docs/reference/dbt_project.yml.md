@@ -1,7 +1,12 @@
----
-title: "Reference: dbt_project.yml"
-id: dbt-project.yml
----
+
+<Alert type='danger'>
+
+This is a work in progress document.
+
+</Alert>
+
+
+<File name='dbt_project.yml'>
 
 ```yml
 name: string
@@ -30,7 +35,13 @@ seeds:
 snapshots:
   [<snapshot-configs>](snapshot-configs.md)
 
+on-run-start: sql-snippet
+on-run-end: sql-snippet
+
 ```
+
+</File>
+
 ☝️I need a way to make those links work. Let's pretend that the hyperlinks above work:
 * [data-paths](data-paths.md) [Why doesn't this link work?!]
 * [quote_columns](quote_columns.md)
