@@ -3,23 +3,41 @@ title: Seed configurations
 ---
 
 ## Available configurations
-```
-[quote_columns](quote-columns.md): true | false
-[enabled](enabled.md): true | false
-schema: schema_name
-pre-hook: sql-snippet
-post-hook: sql-snippet
-seed_name:
-  column_types:
-    column_name: column-type
-```
+
+* [quote_columns](quote-columns.md)
+* [enabled](enabled.md)
+* [schema](schema.md)
+* [pre-hook](pre-hook.md)
+* [post-hook](post-hook.md)
+* [column_types](column_types.md)
 
 ## Configuring seeds
-Seeds can only be configured from the `dbt_project.yml` file. To apply
-configurations to all seeds, nest the configurations under the `seeds:` key:
+Seeds can only be configured from the `dbt_project.yml` file.
 
+To apply
+configurations to all seeds, nest the configurations under the `seeds:` key. For a project with:
+* `name: jaffle_shop`
+* A seed file at `data/country_codes.csv`, and
+* A seed file at `data/marketing/utm_parameters.csv`
+
+<File name='dbt_project.yml'>
 
 ```yml
-seeds:
 
+seeds:
+  jaffle_shop:
+    enabled: true
+    schema: seed_data
+    # This configures data/country_codes.csv
+    country_codes:
+      # Override column types
+      column_types:
+        country_code: varchar(2)
+        country_name: varchar(32)
+    marketing:
+      schema: marketing # this will take precedence
 ```
+
+</File>
+
+Seed configurations, like model configurations, are applied hierarchically — configurations applied to the `marketing` subdirectory will take precedence over configurations applied to the entire `jaffle_shop` project.

@@ -4,8 +4,7 @@ title: Can I test and document seeds?
 
 Yes!
 
-To test and document seeds, use a [schema file](link-to-doc) and nest the
-the configurations under a `seeds:` key
+To test and document seeds, use a [schema file](docs/building-a-dbt-project/testing-and-documentation/schemayml-files.md) and nest the configurations under a `seeds:` key
 
 ## Example:
 
@@ -30,4 +29,4 @@ seeds:
 
 </File>
 
-Check out the [schema file docs](link-to-doc) for more information.
+Check out the [schema file docs](docs/building-a-dbt-project/testing-and-documentation/schemayml-files.md) for more information.

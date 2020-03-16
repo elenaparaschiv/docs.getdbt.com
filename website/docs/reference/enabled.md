@@ -1,5 +1,5 @@
 ## Definition
-An optional configuration for disabling models, seeds, snapshots, and data tests.
+An optional configuration for disabling models, seeds, and snapshots.
 
 * Default: true
 

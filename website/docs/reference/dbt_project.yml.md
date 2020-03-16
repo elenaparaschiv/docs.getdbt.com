@@ -1,7 +1,7 @@
 
-<Alert type='danger'>
+<Alert type='warning'>
 
-This is a work in progress document.
+This is a work in progress document. It has only been completed for seeds.
 
 </Alert>
 
@@ -42,10 +42,5 @@ on-run-end: sql-snippet
 
 </File>
 
-☝️I need a way to make those links work. Let's pretend that the hyperlinks above work:
-* [data-paths](data-paths.md) [Why doesn't this link work?!]
-* [quote_columns](quote_columns.md)
-* Do we add the quoting configs here?
-
-Notes:
-* Should these be like the faqs where they get rendered out a certain way?
+Relevant links:
+* [data-paths](data-paths.md)

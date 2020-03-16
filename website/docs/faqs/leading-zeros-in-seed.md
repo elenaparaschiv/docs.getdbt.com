@@ -2,8 +2,7 @@
 title: How do I preserve leading zeros in a seed?
 ---
 
-From v0.16.0 onwards, using the `column_types` [configuration](reference/column_types.md) to set a column datatype will preserve leading zeros.
+If you need to preserve leading zeros (for example in a zipcode or mobile number):
 
-Prior to this version, the library that dbt uses to load CSVs would strip leading zeroes. If you're using an earlier version of dbt and experiencing this problem, we recommend that you either:
-1. Upgrade to v0.16.0, or
-2. Use a downstream model to pad the leading zeros back in using SQL, for example: `lpad(zipcode, 5, '0')`
+1. v0.16.0 onwards: Include leading zeros in your seed file, and use the `column_types` [configuration](reference/column_types.md) with a varchar datatype of the correct length.
+2. Prior to v0.16.0: Use a downstream model to pad the leading zeros using SQL, for example: `lpad(zipcode, 5, '0')`
